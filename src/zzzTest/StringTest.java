@@ -11,17 +11,23 @@ import java.util.List;
 public class StringTest {
     public static void main(String[] args) {
 
-        String str = "1,2,3,";
-        System.out.println( str.substring(0, str.length()-1));
-
+        testSubString();
     }
+
+    private static void testSplit() {
+        String str = "253";
+        String[] split = str.split(",");
+        System.out.println(split.length);
+        System.out.println(split);
+    }
+
     public static void test02(){
         System.out.println(StringUtils.isNotBlank(null));
         System.out.println(StringUtils.isNotBlank(""));
         System.out.println(StringUtils.isNotBlank("  "));
     }
 
-    public void test01(){
+    public void testEquals(){
         String a = "ab";
         String b = "a"+"b";
         System.out.println(a.equals(b));    //true
@@ -37,6 +43,17 @@ public class StringTest {
         stringList.add(str3);
 
         System.out.println(String.join(";", stringList));
+    }
+
+    private static void testSubString() {
+        List<Long> ids = new ArrayList<>();
+        ids.add(1l);
+        ids.add(2l);
+        ids.add(3l);
+        System.out.println(ids.lastIndexOf(']'));
+        String str = ids.toString();
+        System.out.println(str.substring(1, str.length()-1));
+        System.out.println(str);
     }
 
     /**
